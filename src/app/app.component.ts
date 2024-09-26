@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
     });
 
     this.peer.on('call', (call: MediaConnection) => {
+      console.log('Incoming call');
       call.answer(this.localStream); // Trả lời cuộc gọi với luồng video của bạn
       this.handleCall(call);
     });
@@ -54,6 +55,8 @@ export class AppComponent implements OnInit {
       });
   }
   callPeer(peerId: string): void {
+    console.log('Calling peer', peerId);
+
     if (!this.peer || !this.localStream) {
       return;
     }
@@ -63,6 +66,8 @@ export class AppComponent implements OnInit {
 
   handleCall(call: MediaConnection): void {
     call.on('stream', (remoteStream) => {
+      console.log('Remote stream available');
+
       if (this.remoteVideo && this.remoteVideo.nativeElement) {
         this.remoteVideo.nativeElement.srcObject = remoteStream;
       }
