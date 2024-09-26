@@ -28,6 +28,18 @@ export class AppComponent implements OnInit {
       host: '0.peer.mikademy.ca',
       // port: 443,
       path: '/myapp',
+      config: {
+        iceServers: [
+          {
+            // urls: 'turn:171.233.28.183:3478',
+            urls: 'turn:coturn.mikademy.ca:10000',
+            username: 'coturn',
+            credential: 'coturn',
+          },
+        ],
+        sdpSemantics: 'unified-plan',
+      },
+      debug: 1,
     });
 
     this.peer.on('open', (id) => {
