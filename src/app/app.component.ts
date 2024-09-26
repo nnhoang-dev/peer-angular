@@ -25,8 +25,8 @@ export class AppComponent implements OnInit {
 
   initializePeer(): void {
     this.peer = new Peer({
-      host: 'https://0.peer.mikademy.ca',
-      port: 9000,
+      host: '0.peer.mikademy.ca',
+      // port: 443,
       path: '/myapp',
     });
 
