@@ -1,0 +1,10 @@
+<div class="video-call-container">
+  <video #myVideo autoplay [muted]="true"></video>
+  <video #remoteVideo autoplay></video>
+
+  <div class="controls">
+    <input type="text" #peerIdInput placeholder="Peer ID" />
+    <!-- <button>Call</button> -->
+    <button (click)="callPeer(peerIdInput.value)">Call</button>
+  </div>
+</div>
