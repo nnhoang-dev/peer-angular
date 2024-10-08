@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   @ViewChild('myVideo') myVideo!: ElementRef<HTMLVideoElement>;
   @ViewChild('remoteVideo') remoteVideo!: ElementRef<HTMLVideoElement>;
 
+  id: string = '';
+
   peer: Peer | undefined;
   localStream: MediaStream | undefined;
   title = 'call-realtime';
@@ -26,10 +28,16 @@ export class AppComponent implements OnInit {
   initializePeer(): void {
     this.peer = new Peer({
       host: '0.peer.mikademy.ca',
-      port: 10001,
+      port: 443,
       path: '/myapp',
       config: {
         iceServers: [
+          {
+            // urls: 'turn:171.233.28.183:3478',
+            urls: 'turn:103.245.249.165:10001',
+            username: 'turnuser',
+            credential: 'turnuser',
+          },
           {
             // urls: 'turn:171.233.28.183:3478',
             urls: 'turn:103.245.249.165:3478',
@@ -53,6 +61,7 @@ export class AppComponent implements OnInit {
     });
 
     this.peer.on('open', (id) => {
+      this.id = id;
       console.log('My peer ID is: ' + id);
     });
 
