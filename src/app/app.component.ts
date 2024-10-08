@@ -30,12 +30,12 @@ export class AppComponent implements OnInit {
       path: '/myapp',
       config: {
         iceServers: [
-          {
-            // urls: 'turn:171.233.28.183:3478',
-            urls: 'turn:103.245.249.165:3478',
-            username: 'turnuser',
-            credential: 'turnuser',
-          },
+          // {
+          //   // urls: 'turn:171.233.28.183:3478',
+          //   urls: 'turn:103.245.249.165:3478',
+          //   username: 'turnuser',
+          //   credential: 'turnuser',
+          // },
           {
             // urls: 'turn:171.233.28.183:3478',
             urls: 'turn:103.245.251.89:3478',
