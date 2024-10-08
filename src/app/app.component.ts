@@ -26,21 +26,25 @@ export class AppComponent implements OnInit {
   initializePeer(): void {
     this.peer = new Peer({
       host: '0.peer.mikademy.ca',
-      // port: 443,
+      port: 10001,
       path: '/myapp',
       config: {
         iceServers: [
-          // {
-          //   // urls: 'turn:171.233.28.183:3478',
-          //   urls: 'turn:103.245.249.165:3478',
-          //   username: 'turnuser',
-          //   credential: 'turnuser',
-          // },
+          {
+            // urls: 'turn:171.233.28.183:3478',
+            urls: 'turn:103.245.249.165:3478',
+            username: 'turnuser',
+            credential: 'turnuser',
+          },
           {
             // urls: 'turn:171.233.28.183:3478',
             urls: 'turn:103.245.251.89:3478',
             username: 'turnuser',
             credential: 'turnuser',
+          },
+          {
+            // urls: 'turn:171.233.28.183:3478',
+            urls: 'stun.l.google.com:19302',
           },
         ],
         sdpSemantics: 'unified-plan',
