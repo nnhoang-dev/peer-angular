@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
         ],
         sdpSemantics: 'unified-plan',
       },
-      debug: 1,
+      debug: 3,
     });
 
     this.peer.on('open', (id) => {
