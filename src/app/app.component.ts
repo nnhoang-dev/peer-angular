@@ -34,21 +34,13 @@ export class AppComponent implements OnInit {
         iceServers: [
           {
             // urls: 'turn:171.233.28.183:3478',
-            urls: 'turn:103.245.249.165:10001',
-            username: 'turnuser',
-            credential: 'turnuser',
+            urls: 'turn:61.28.231.150:3478',
+            username: 'coturn',
+            credential: 'coturn',
           },
           {
             // urls: 'turn:171.233.28.183:3478',
-            urls: 'turn:103.245.249.165:3478',
-            username: 'turnuser',
-            credential: 'turnuser',
-          },
-          {
-            // urls: 'turn:171.233.28.183:3478',
-            urls: 'turn:103.245.251.89:3478',
-            username: 'turnuser',
-            credential: 'turnuser',
+            urls: 'stun:61.28.231.150:3478',
           },
           // { urls: 'stun:stun.l.google.com:5349' },
           // { urls: 'stun:stun1.l.google.com:3478' },
